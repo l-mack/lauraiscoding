@@ -1,0 +1,160 @@
+// media qs
+
+@media (max-width: 1075px){
+    .headerTextbox{
+        padding: 35% 5%;
+    }
+
+    .aboutFlex{
+        .imgDiv{
+            width: auto;
+        }
+    }
+
+    .aboutFlex .aboutTextBox p{
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 950px){
+    .portfolioGrid{
+        grid-template-columns: 1fr;
+    }
+
+    .portfolioGrid li{
+        margin: 5%;
+    }
+
+    .portfolioGrid li:nth-of-type(1){
+        order: 1;
+    }
+
+    .portfolioGrid li:nth-of-type(2){
+        order: 2;
+    }
+
+    .portfolioGrid li:nth-of-type(3){
+        order: 4;
+    }
+
+    .portfolioGrid li:nth-of-type(4){
+        order: 3;
+    }
+
+    .portfolioGrid li:nth-of-type(5){
+        order: 5;
+    }
+
+    .portfolioGrid li:nth-of-type(6){
+        order: 6;
+    }
+
+    .portfolioGrid li:nth-of-type(7){
+        order: 8;
+    }
+
+    .portfolioGrid li:nth-of-type(8){
+        order: 7;
+    }
+
+    .portfolioGrid .tagBox{
+        padding: 8% 25%;
+    }
+
+    .portfolioGrid .linkBox{
+        margin-top: 5%;
+    }
+}
+
+@media (max-width: 750px){
+    .wrapper{
+        width: 70%;
+    }
+    .aboutFlex{
+        flex-direction: column;
+    }
+    .aboutFlex .aboutTextBox{
+        padding: 10% 0 0 0;
+    }
+
+    nav .wrapper ul{
+        visibility: hidden;
+    }
+
+    .whiteNav{
+        visibility: hidden;
+    }
+
+    .hamburger{
+        visibility: visible;
+    }
+
+    .skillsFlex .skillsGrid{
+        grid-template-columns: auto auto auto;
+    }
+}
+
+@media (max-width: 600px){
+    .headerTextbox{
+        padding: 55% 5% 0 5%;
+    }
+}
+
+@media (max-width: 480px){
+
+        .headerTextbox{
+        padding-top: 80%;
+    }
+    .headerTextbox h1{
+        font-size: 6rem;
+    }
+
+
+    header{
+        background-position: 10%;
+    }
+
+        .skillsFlex .skillsGrid{
+        grid-template-columns: auto auto;
+    }
+
+    .portItemMask{
+        flex-direction: column;
+    }
+
+     .portItemMask .maskLink i{
+        font-size: 3rem;
+     }
+    
+    footer i{
+        font-size: 3rem;
+        padding: 20px;
+    }
+
+    .portfolioGrid .linkBox{
+        flex-direction: column;
+
+        a{
+            width: 50%;
+            padding: 10px 0;
+        }
+    }
+
+    .portfolioGrid a:last-child{
+        margin: 0;
+        margin-top: 15px;
+    }
+}
+
+@media (max-width: 380px){
+
+        header{
+        background-position: 20%;
+    }
+}
+
+@media (max-width: 350px){
+            header{
+        background-position: 25%;
+    }
+}

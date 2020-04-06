@@ -1,0 +1,315 @@
+// header styles 
+
+.logoDiv{
+    position: relative;
+}
+
+.logo{
+    font-family: $primaryFont;
+    font-size: 3rem;
+    font-weight: 900;
+    position: absolute;
+    top: -25px;
+    
+
+}
+
+.whiteNav{
+    background: $primaryWhite;
+    opacity: .9;
+    transition: opacity 1s, visibility 1s, height 1s;
+}
+
+#topMenu li.active a{
+    opacity: 1;
+    font-weight: 900;
+}
+
+nav{
+    padding: 20px;
+    padding-bottom: 40px;
+    position: fixed;
+    width: 100%;
+    transition: all .3s ease-out;
+    z-index: 3000;
+    
+
+    .wrapper{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: fixed;
+
+        ul{
+            @include centerFlex();
+            @include secondaryFont();
+            text-transform: uppercase;
+            font-size: 1.2rem;
+        }
+
+        li{
+            position: relative;
+
+            a{
+                transition: .5s all ease-out;
+            }
+        }
+        
+        li::after{
+            position: absolute;
+            bottom: -150%;
+            left: 50%;
+            content: "";
+            width: 0;
+            height: 3px;
+            background: $accent;
+            transform: translateX(-50%);
+            transition: .2s;
+        }
+
+        li:hover:after,
+        li:focus:after{
+            width: 100%;
+        }
+
+        .navLink{
+            padding: 10px;
+            color: $primaryBlack;
+            opacity: .7;
+            transition: opacity .3s ease-out;
+        }
+
+        .navLink:hover,
+        .navLink:focus{
+            opacity: 1;
+        }
+    }
+}
+
+// nav open styles 
+nav .wrapper.open{
+    opacity: .9;
+    
+
+}
+nav .wrapper ul.open{
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: $primaryWhite;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    opacity: .9;
+    transition: opacity .3s ease-out;
+    visibility: visible;
+    padding-left: 65px;
+    
+
+    li:after{
+        left: 50%;
+        bottom: 0%;
+    } 
+
+    a{
+        font-size: 3rem;
+    }
+
+    li{
+        padding: 5%;
+            animation: fadeInRight .5s ease forwards;
+            animation-delay: .35s;
+    }
+
+    li:nth-of-type(2){
+        animation-delay: .4s;
+    }
+
+    li:nth-of-type(3){
+        animation-delay: .45s;
+    }
+
+    li:nth-of-type(4){
+        animation-delay: .50s;
+    }
+}
+
+
+@keyframes fadeInRight{
+    0%{
+        opacity: 0;
+        left: 20%
+    }
+    100%{
+        opacity: 1;
+        left: 0;
+    }
+}
+
+@keyframes fadeInRight{
+    0%{
+        opacity: 0;
+        left: 20%;
+    }
+    100%{
+        opacity: 1;
+        left: 0;
+    }
+}
+
+// hamburger styles
+.hamburger{
+    position: fixed;
+    top: 5%;
+    right: 3%;
+    height: 27px;
+    width: 35px;
+    cursor: pointer;
+    transition: opacity .25s ease;
+    z-index: 5000;
+    visibility: hidden;
+    span{
+        background: $primaryBlack;
+        border: none;
+        height: 5px;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: all .35s ease;
+        z-index: 5000;
+    }
+    span:nth-of-type(3){
+        top: 22px;
+    }
+    span:nth-of-type(2){
+        top: 11px;
+    }
+}
+
+.hamburger:hover{
+    opacity: .7;
+}
+
+.hamburger.active .top{
+    transform: translateY(11px) translateX(0) rotate(45deg);
+    background: $primaryBlack;
+}
+
+.hamburger.active .middle{
+    opacity: 0;
+}
+
+.hamburger.active .bottom{
+    transform: translateY(-11px) translateX(0) rotate(-45deg);
+    background: $primaryBlack;
+}
+
+
+header{
+    height: 100vh;
+    background-image: linear-gradient(180deg, hsla(0, 0%, 100%, .4), hsla(0, 0%, 100%, .4)), url(/assets/heroImg3.jpg);
+    background-size: cover;
+    background-size: no-repeat;
+    // margin-bottom: 10%;
+
+    i{
+        color: black;
+    }
+
+    // arrow styling
+    .indicator{
+        position: relative;
+        width: 50px;
+        height: 50px;
+        background: transparent;
+        transform: rotate(45deg);
+        margin-top: 35px;
+        cursor: pointer;
+    }
+
+    .indicator span{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+        border: none;
+        display: block;
+        border-right: 3px solid $primaryWhite;
+        border-bottom: 3px solid $primaryWhite;
+        animation: animate 3s linear infinite;
+    }
+
+    .indicator span:nth-child(1){
+        top: -30px;
+        left: -30px;
+        animation-delay: 0s;
+    }
+
+    .indicator span:nth-child(2){
+        top: -15px;
+        left: -15px;
+        animation-delay: 0.2s;
+    }
+
+    .indicator span:nth-child(3){
+        top: 0px;
+        left: 0px;
+        animation-delay: 0.4s;
+    }
+
+    .indicator span:nth-child(4){
+        top: 15px;
+        left: 15px;
+        animation-delay: 0.6s;
+    }
+
+    .indicator span:nth-child(5){
+        top: 30px;
+        left: 30px;
+        animation-delay: 0.8s;
+    }
+}
+
+// arrow animate 
+@keyframes animate{
+    0%{
+        border-color: transparent;
+        transform: translate(0,0);
+    }
+
+    20%{
+        border-color: $primaryWhite;
+        transform: translate(15px,15px);
+    }
+
+    20.1%,100%{
+        border-color: transparent;
+        
+    }
+}
+
+.headerTextbox{
+    @include centerFlex();
+    flex-direction: column;
+    padding: 30% 10%;
+    text-align: center;
+
+    h1{
+        @include primaryFont();
+        font-size: 8rem;
+        font-weight: 900;
+    }
+
+    h2 a{
+        @include primaryFont();
+        font-size: 1.5rem;
+        letter-spacing: 1.7rem;
+        color: $primaryBlack;
+        text-transform: uppercase;
+    }
+}

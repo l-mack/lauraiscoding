@@ -1,0 +1,28 @@
+// footer styles
+
+footer{
+    background: $primaryBlack;
+
+    p{
+        color: $primaryWhite;
+        text-align: center;
+        font-size: 1.5rem;
+        padding-bottom: 5px;
+    }
+}
+
+.footerFlex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    i{
+        color: $primaryWhite;
+        transition: all .3s ease-in-out;
+    }
+
+    i:hover{
+        transform: scale(1.1);
+    }
+}
+

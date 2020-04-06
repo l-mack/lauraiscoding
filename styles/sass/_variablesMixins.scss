@@ -1,0 +1,45 @@
+// *****************variables*****************
+
+// font
+$primaryFont: 'Lato', sans-serif;
+$secondaryFont: 'Source Sans Pro', sans-serif;
+
+$letterSpacing: 1.5px;
+
+// colour: Color Palette 169452
+$accent: rgb(0, 200, 170);
+$accentLight: rgb(169, 230, 220);
+$primaryColor: rgb(200, 0, 180);
+$primaryGrey: rgb(232, 230, 240);
+$primaryBlack: #0c0c17;
+$primaryWhite: #eeeef7;
+
+
+
+
+// *****************mixins*****************
+
+// font
+@mixin fontSize($sizeValue){
+	// font-size: $sizeValue * 1px;
+    font-size: ($sizeValue/10) * 1rem;
+}
+
+@mixin primaryFont(){
+	font-family: $primaryFont;
+	text-transform: uppercase;
+	letter-spacing: 10px;
+}
+
+@mixin secondaryFont(){
+	font-family: $secondaryFont;
+	letter-spacing: 1.5px;
+}
+
+// alignment and centering
+
+@mixin centerFlex(){
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}

@@ -1,0 +1,48 @@
+/* stripping styles */
+
+// *{
+//     border: 1px solid grey;
+// }
+
+body,
+a,
+p,
+h1,
+h2,
+h3,
+h4,
+ul,
+li{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+}
+
+.wrapper{
+    width: 80%; 
+    max-width: 1300px;
+    margin: 0 auto;
+
+}
+
+li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+/* base styling */
+
+img{
+    width: 100%;
+    display: block;
+}
+
+html{
+    font-size: 62.5%;
+    // text-shadow: 0px 1px 2px $primaryBlack;
+}
+
