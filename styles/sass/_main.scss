@@ -7,19 +7,21 @@
 
 // about styles 
 .aboutFlex{
+    padding-bottom: 5%;;
 
     .imgDiv{
+        float: left;
         box-shadow: -15px 21px 20px 0px $primaryColor;
-        width: 200%;
+        width: 40%;
+        margin-right: 50px;
+        margin-bottom: 50px;
     }
-    @include centerFlex();
-    padding-bottom: 10%;
 
     .aboutTextBox{
-        padding: 0 10%;
 
         p{
             font-size: 1.5rem;
+            padding: 10px;
         }
     }
 }

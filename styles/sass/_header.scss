@@ -119,8 +119,10 @@ nav .wrapper ul.open{
 
     li{
         padding: 5%;
-            animation: fadeInRight .5s ease forwards;
-            animation-delay: .35s;
+        animation: fadeInRight .5s ease forwards;
+        animation-delay: .35s;
+        opacity: 0;
+            
     }
 
     li:nth-of-type(2){

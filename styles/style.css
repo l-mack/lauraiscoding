@@ -420,6 +420,7 @@ nav .wrapper ul.open li {
           animation: fadeInRight .5s ease forwards;
   -webkit-animation-delay: .35s;
           animation-delay: .35s;
+  opacity: 0;
 }
 
 nav .wrapper ul.open li:nth-of-type(2) {
@@ -674,30 +675,21 @@ header .indicator span:nth-child(5) {
 }
 
 .aboutFlex {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  padding-bottom: 10%;
+  padding-bottom: 5%;
 }
 
 .aboutFlex .imgDiv {
+  float: left;
   -webkit-box-shadow: -15px 21px 20px 0px #c800b4;
           box-shadow: -15px 21px 20px 0px #c800b4;
-  width: 200%;
-}
-
-.aboutFlex .aboutTextBox {
-  padding: 0 10%;
+  width: 40%;
+  margin-right: 50px;
+  margin-bottom: 50px;
 }
 
 .aboutFlex .aboutTextBox p {
   font-size: 1.5rem;
+  padding: 10px;
 }
 
 h3 {
@@ -1042,7 +1034,7 @@ footer {
 footer p {
   color: #eeeef7;
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   padding-bottom: 5px;
 }
 
@@ -1072,9 +1064,6 @@ footer p {
 @media (max-width: 1075px) {
   .headerTextbox {
     padding: 35% 5%;
-  }
-  .aboutFlex .imgDiv {
-    width: auto;
   }
   .aboutFlex .aboutTextBox p {
     font-size: 1.3rem;
@@ -1141,15 +1130,6 @@ footer p {
   .wrapper {
     width: 70%;
   }
-  .aboutFlex {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
-  .aboutFlex .aboutTextBox {
-    padding: 10% 0 0 0;
-  }
   nav .wrapper ul {
     visibility: hidden;
   }
@@ -1211,6 +1191,9 @@ footer p {
   .portfolioGrid a:last-child {
     margin: 0;
     margin-top: 15px;
+  }
+  .aboutFlex .imgDiv {
+    width: 100%;
   }
 }
 

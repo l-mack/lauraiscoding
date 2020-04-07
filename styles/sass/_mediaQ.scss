@@ -5,11 +5,11 @@
         padding: 35% 5%;
     }
 
-    .aboutFlex{
-        .imgDiv{
-            width: auto;
-        }
-    }
+    // .aboutFlex{
+    //     .imgDiv{
+    //         width: auto;
+    //     }
+    // }
 
     .aboutFlex .aboutTextBox p{
         font-size: 1.3rem;
@@ -69,12 +69,6 @@
 @media (max-width: 750px){
     .wrapper{
         width: 70%;
-    }
-    .aboutFlex{
-        flex-direction: column;
-    }
-    .aboutFlex .aboutTextBox{
-        padding: 10% 0 0 0;
     }
 
     nav .wrapper ul{
@@ -144,7 +138,12 @@
         margin: 0;
         margin-top: 15px;
     }
+
+        .aboutFlex .imgDiv{
+        width: 100%;
+    }
 }
+
 
 @media (max-width: 380px){
 
