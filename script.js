@@ -1,81 +1,43 @@
 // name space
 const myPortfolio = {};
 
-// typewriter 
-const TxtType = function(e1, toRotate, period){
-    this.toRotate = toRotate;
-    this.e1 = e1;
-    this.loopNum = 0;
-    this.period = parseInt(period, 10) || 2000;
-    this.txt = '';
-    this.tick();
-    this.isDeleting = false;
-};
-
-TxtType.prototype.tick = function(){
-    const i = this.loopNum % this.toRotate.length;
-    const fullText = this.toRotate[i];
-
-    if (this.isDeleting){
-        this.txt = fullText.substring(0, this.txt.length -1);
-    } else{
-        this.txt = fullText.substring(0, this.txt.length + 1);
-    }
-
-    this.e1.innerHTML = '<span class="wrap">'+this.txt+'</span>';
-
-    let that = this;
-    let delta = 200 - Math.random() * 100;
-
-    if (this.isDeleting) { delta /= 2; }
-
-    if (!this.isDeleting && this.txt === fullText){
-        delta = this.period;
-        this.isDeleting = true;
-    } else if (this.isDeleting && this.txt === ''){
-        this.isDeleting = false;
-        this.loopNum++;
-        delta = 500;
-    }
-
-    setTimeout(function(){
-        that.tick();
-    }, delta);
-};
-
-window.onload = function(){
-    const elements =
-    document.getElementsByClassName('typewrite');
-
-    for (let i=0; i<elements.length; i++){
-        const toRotate = elements[i].getAttribute('data-type');
-        const period = elements[i].getAttribute('data-period');
-        if (toRotate){
-            new TxtType(elements[i], JSON.parse(toRotate), period);
-        }
-    }
-    // css
-    const css = document.createElement("style");
-    css.type = "text/css";
-    css.innerHTML = ".typewrite > .wrap {border-right: 1.5px solid #fff}";
-    document.body.appendChild(css);
-};
-
 
 // event listeners 
-myPortfolio.navBackground = function(){
-    
-    // add/remove nav background
-    const nav = $('.clearNav');
-    $(window).scroll(function(){
-        const scroll = $(window).scrollTop();
+myPortfolio.navBackground = function() {
 
-        if (scroll >= 100){
-            nav.removeClass('clearNav').addClass('whiteNav');
-        }else {
-            nav.removeClass('whiteNav').addClass('clearNav');
+    let scrollPos = window.scrollY
+
+    const nav = document.querySelector('nav')
+
+    const navHeight = nav.offsetHeight
+
+    const addClassOnScroll = () => nav.classList.add('white-nav')
+
+    const removeClassOnScroll = () => nav.classList.remove('white-nav')
+
+    window.addEventListener('scroll', function() {
+        scrollPos = window.scrollY
+
+        if (scrollPos >= navHeight) {
+            addClassOnScroll()
+        } 
+
+        else {
+            removeClassOnScroll()
         }
     })
+    
+    // // add/remove nav background
+    // const nav = $('.clearNav');
+    // $(window).scroll(function(){
+    //     const scroll = $(window).scrollTop();
+
+    //     if (scroll >= 100){
+    //         nav.removeClass('clearNav').addClass('whiteNav');
+    //     }else {
+    //         nav.removeClass('whiteNav').addClass('clearNav');
+    //     }
+    // })
 
 }
 

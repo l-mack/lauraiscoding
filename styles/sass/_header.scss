@@ -1,31 +1,31 @@
 // header styles 
 
-.logoDiv{
+.logo-div {
     position: relative;
 }
 
-.logo{
+.logo {
     font-family: $primaryFont;
+    color: $primaryWhite;
     font-size: 3rem;
     font-weight: 900;
     position: absolute;
-    top: -25px;
-    
+    top: -33px;
 
 }
 
-.whiteNav{
-    background: $primaryWhite;
-    opacity: .9;
-    transition: opacity 1s, visibility 1s, height 1s;
+
+.black-nav {
+    background: black;
+
 }
 
-#topMenu li.active a{
+#top-menu li.active a {
     opacity: 1;
     font-weight: 900;
 }
 
-nav{
+nav {
     padding: 20px;
     padding-bottom: 40px;
     position: fixed;
@@ -34,28 +34,28 @@ nav{
     z-index: 3000;
     
 
-    .wrapper{
+    .wrapper {
         display: flex;
         justify-content: space-between;
         align-items: center;
         position: fixed;
 
-        ul{
+        ul {
             @include centerFlex();
             @include secondaryFont();
             text-transform: uppercase;
             font-size: 1.2rem;
         }
 
-        li{
+        li {
             position: relative;
 
-            a{
+            a {
                 transition: .5s all ease-out;
             }
         }
         
-        li::after{
+        li::after {
             position: absolute;
             bottom: -150%;
             left: 50%;
@@ -68,31 +68,42 @@ nav{
         }
 
         li:hover:after,
-        li:focus:after{
+        li:focus:after {
             width: 100%;
         }
 
-        .navLink{
+        .nav-link {
             padding: 10px;
-            color: $primaryBlack;
+            color: $primaryWhite;
             opacity: .7;
             transition: opacity .3s ease-out;
         }
 
-        .navLink:hover,
-        .navLink:focus{
+        .nav-link:hover,
+        .nav-link:focus {
             opacity: 1;
         }
     }
 }
 
+.white-nav {
+    background: $primaryWhite;
+    opacity: .9;
+    transition: opacity 1s, visibility 1s, height 1s;
+
+    .wrapper .nav-link,
+    .logo {
+        color: $primaryBlack;
+    }
+}
+
 // nav open styles 
-nav .wrapper.open{
+nav .wrapper.open {
     opacity: .9;
     
 
 }
-nav .wrapper ul.open{
+nav .wrapper ul.open {
     flex-direction: column;
     align-items: flex-start;
     background-color: $primaryWhite;
@@ -102,22 +113,22 @@ nav .wrapper ul.open{
     width: 100%;
     height: 100vh;
     text-align: center;
-    opacity: .9;
+    opacity: .97;
     transition: opacity .3s ease-out;
     visibility: visible;
     padding-left: 65px;
     
 
-    li:after{
+    li:after {
         left: 50%;
         bottom: 0%;
     } 
 
-    a{
+    a {
         font-size: 3rem;
     }
 
-    li{
+    li {
         padding: 5%;
         animation: fadeInRight .5s ease forwards;
         animation-delay: .35s;
@@ -125,21 +136,21 @@ nav .wrapper ul.open{
             
     }
 
-    li:nth-of-type(2){
+    li:nth-of-type(2) {
         animation-delay: .4s;
     }
 
-    li:nth-of-type(3){
+    li:nth-of-type(3) {
         animation-delay: .45s;
     }
 
-    li:nth-of-type(4){
+    li:nth-of-type(4) {
         animation-delay: .50s;
     }
 }
 
 
-@keyframes fadeInRight{
+@keyframes fadeInRight {
     0%{
         opacity: 0;
         left: 20%
@@ -150,7 +161,7 @@ nav .wrapper ul.open{
     }
 }
 
-@keyframes fadeInRight{
+@keyframes fadeInRight {
     0%{
         opacity: 0;
         left: 20%;
@@ -162,9 +173,8 @@ nav .wrapper ul.open{
 }
 
 // hamburger styles
-.hamburger{
+.hamburger {
     position: fixed;
-    top: 5%;
     right: 3%;
     height: 27px;
     width: 35px;
@@ -172,7 +182,7 @@ nav .wrapper ul.open{
     transition: opacity .25s ease;
     z-index: 5000;
     visibility: hidden;
-    span{
+    span {
         background: $primaryBlack;
         border: none;
         height: 5px;
@@ -183,102 +193,48 @@ nav .wrapper ul.open{
         transition: all .35s ease;
         z-index: 5000;
     }
-    span:nth-of-type(3){
+    span:nth-of-type(3) {
         top: 22px;
     }
-    span:nth-of-type(2){
+    span:nth-of-type(2) {
         top: 11px;
     }
 }
 
-.hamburger:hover{
+.hamburger:hover {
     opacity: .7;
 }
 
-.hamburger.active .top{
+.hamburger.active .top {
     transform: translateY(11px) translateX(0) rotate(45deg);
     background: $primaryBlack;
 }
 
-.hamburger.active .middle{
+.hamburger.active .middle {
     opacity: 0;
 }
 
-.hamburger.active .bottom{
+.hamburger.active .bottom {
     transform: translateY(-11px) translateX(0) rotate(-45deg);
     background: $primaryBlack;
 }
 
 
-header{
+header {
     height: 100vh;
-    background-image: linear-gradient(180deg, hsla(0, 0%, 100%, .4), hsla(0, 0%, 100%, .4)), url(/assets/heroImg3.jpg);
+    // background-image: linear-gradient(180deg, hsla(0, 0%, 100%, .4), hsla(0, 0%, 100%, .4)), url(/assets/heroImg.jpg);
     background-size: cover;
     background-size: no-repeat;
-    // margin-bottom: 10%;
 
-    i{
+    i {
         color: black;
     }
 
-    // arrow styling
-    .indicator{
-        position: relative;
-        width: 50px;
-        height: 50px;
-        background: transparent;
-        transform: rotate(45deg);
-        margin-top: 35px;
-        cursor: pointer;
-    }
 
-    .indicator span{
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        box-sizing: border-box;
-        border: none;
-        display: block;
-        border-right: 3px solid $primaryWhite;
-        border-bottom: 3px solid $primaryWhite;
-        animation: animate 3s linear infinite;
-    }
-
-    .indicator span:nth-child(1){
-        top: -30px;
-        left: -30px;
-        animation-delay: 0s;
-    }
-
-    .indicator span:nth-child(2){
-        top: -15px;
-        left: -15px;
-        animation-delay: 0.2s;
-    }
-
-    .indicator span:nth-child(3){
-        top: 0px;
-        left: 0px;
-        animation-delay: 0.4s;
-    }
-
-    .indicator span:nth-child(4){
-        top: 15px;
-        left: 15px;
-        animation-delay: 0.6s;
-    }
-
-    .indicator span:nth-child(5){
-        top: 30px;
-        left: 30px;
-        animation-delay: 0.8s;
-    }
 }
 
 // arrow animate 
-@keyframes animate{
+@keyframes animate {
     0%{
         border-color: transparent;
         transform: translate(0,0);
@@ -295,20 +251,20 @@ header{
     }
 }
 
-.headerTextbox{
+.header-textbox {
     @include centerFlex();
     flex-direction: column;
     padding: 30% 10%;
     text-align: center;
 
-    h1{
+    h1 {
         @include primaryFont();
         font-size: 8rem;
         font-weight: 900;
     }
 
-    h2 a{
-        @include primaryFont();
+    h2 {
+        @include secondaryFont();
         font-size: 1.5rem;
         letter-spacing: 1.7rem;
         color: $primaryBlack;

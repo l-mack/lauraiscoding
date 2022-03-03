@@ -12,17 +12,18 @@ footer{
 }
 
 .footerFlex{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
 
-    i{
-        color: $primaryWhite;
-        transition: all .3s ease-in-out;
-    }
+    // i{
+    //     color: $primaryWhite;
+    //     transition: all .3s ease-in-out;
+    //     font-size: 2rem;
+    // }
 
-    i:hover{
-        transform: scale(1.1);
-    }
+    // i:hover{
+    //     transform: scale(1.1);
+    // }
 }
 

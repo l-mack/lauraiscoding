@@ -5,12 +5,6 @@
         padding: 35% 5%;
     }
 
-    // .aboutFlex{
-    //     .imgDiv{
-    //         width: auto;
-    //     }
-    // }
-
     .aboutFlex .aboutTextBox p{
         font-size: 1.3rem;
     }
@@ -22,7 +16,8 @@
     }
 
     .portfolioGrid li{
-        margin: 5%;
+        margin: 0;
+        margin: 5% 0;
     }
 
     .portfolioGrid li:nth-of-type(1){
@@ -57,12 +52,17 @@
         order: 7;
     }
 
-    .portfolioGrid .tagBox{
-        padding: 8% 25%;
-    }
 
     .portfolioGrid .linkBox{
         margin-top: 5%;
+    }
+
+    .portItemMask .maskLink i{
+        font-size: 8rem;
+    }
+
+    .contactForm{
+        padding: 5px;
     }
 }
 
@@ -77,10 +77,15 @@
 
     .whiteNav{
         visibility: hidden;
+        background: transparent;
     }
 
     .hamburger{
         visibility: visible;
+    }
+
+    .aboutFlex .imgDiv{
+        width: 100%;
     }
 
     .skillsFlex .skillsGrid{
@@ -91,6 +96,10 @@
 @media (max-width: 600px){
     .headerTextbox{
         padding: 55% 5% 0 5%;
+    }
+
+    .portItemMask .maskLink i{
+        font-size: 6rem;
     }
 }
 
@@ -105,7 +114,7 @@
 
 
     header{
-        background-position: 10%;
+        background-position: 30%;
     }
 
         .skillsFlex .skillsGrid{
@@ -121,7 +130,7 @@
      }
     
     footer i{
-        font-size: 3rem;
+        font-size: 1.5rem;
         padding: 20px;
     }
 
@@ -139,9 +148,6 @@
         margin-top: 15px;
     }
 
-        .aboutFlex .imgDiv{
-        width: 100%;
-    }
 }
 
 

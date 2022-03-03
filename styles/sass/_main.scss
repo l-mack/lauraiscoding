@@ -2,132 +2,72 @@
 .skills,
 .projects,
 .formSection{
-    padding-top: 5%;
+    padding-top: 60px;
 }
 
 // about styles 
-.aboutFlex{
-    padding-bottom: 5%;;
 
-    .imgDiv{
-        float: left;
-        box-shadow: -15px 21px 20px 0px $primaryColor;
-        width: 40%;
-        margin-right: 50px;
-        margin-bottom: 50px;
+.about {
+    background: $primaryBlack;
+    padding-bottom: 60px;
+   
+    .about-flex {
+         @include centerFlex;
+         flex-direction: column;
     }
 
-    .aboutTextBox{
-
-        p{
-            font-size: 1.5rem;
-            padding: 10px;
-        }
-    }
-}
-
-h3{
+    h3 {
+    color: $primaryWhite;
     font-family: $primaryFont;
     font-size: 3rem;
     letter-spacing: .2rem;
-    text-transform: capitalize;
-    font-weight: 400;
-    padding-bottom: 5px;
-}
-
-.boldWord{
-    font-weight: 900;
-}
-
-p{
-    @include secondaryFont();
-    font-size: 1.2rem;
-    line-height: 2;
-}
-
-i{
-    font-size: 5rem;
-    padding: 20px 45px;
-    color: $accent;
-}
-
-
-// skill styles
-.skills{
-    background: $primaryWhite;
-    padding: 60px;
-}
-
-.skillsFlex,
-.skillsGrid li,
-.portfolioTextBox,
-.contactTextBox{
-    @include centerFlex();
-    flex-direction: column;
-}
-
-.skillsFlex{
-    h3{
-        padding-bottom: 40px;
+    font-weight: 700;
+    padding-bottom: 20px;
     }
 
-    .skillsGrid{
-        display: grid;
-        grid-template-rows: auto auto;
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-
-        p{
-            font-size: 3rem;
-            color: $accent;
-        }
-    }
-
-    .skillItem{
-        margin: 0 auto;
-        position: relative;
-    }
-
-    .skillItem .front{
-        // position: absolute;
-        top: 0;
-        z-index: 900;
-        transform: rotate(0deg) rotateX(0deg);
-        transform-style: preserve-3d;
-        backface-visibility: hidden;
-        transition: all .4s ease-in-out;
-    }
-
-    .skillItem.flip .front{
-        z-index: 900;
-        transform: rotateX(180deg);
-    }
-
-    .skillItem .back{
-        position: absolute;
-        top: 0;
-        z-index: 800;
-        transform: rotateX(-180deg);
-        transform-style: preserve-3d;
-        backface-visibility: hidden;
+    button {
+        background: $primaryColor;
+        border: none;
+        padding: 10px 25px;
+        font-family: $primaryFont;
+        text-transform: uppercase;
+        color: $primaryBlack;
+        letter-spacing: .3rem;
         transition: all .3s ease-in-out;
-    }
-
-    .skillItem.flip .back{
-        z-index: 1000;
-        transform: rotateX(0deg) rotateY(0deg);
+        text-align: center;
     }
 }
 
 // portfolio styles
-.portfolioTextBox,
-.contactTextBox{
+
+.portfolio-text-box {
     padding-bottom: 60px;
-    p{
+    @include centerFlex;
+    flex-direction: column;
+
+    h3 {
+        font-family: $primaryFont;
+        font-size: 5rem;
+    }
+    p {
+        font-family: $secondaryFont;
+        font-size: 1.5rem;
         letter-spacing: 4px;
     }
 }
 
-.portItem{
+.portfolioGrid{
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-columns: 1fr 1fr;
+    padding-bottom: 60px;
+
+    li {
+        margin: 10%;
+        min-width: 0;
+    }
+
+.port-item {
     overflow: hidden;
     position: relative;
 
@@ -139,80 +79,51 @@ i{
     &:hover > img{
         transform: scale(1.1);
     }
+
+    
 }
 
-.portItemMask{
-    position: absolute;
-    left: 0px;
-    top: 0px;
-    width: 100%;
-    height: 85%;
-    background-color: $accent;
-    transition: opacity 300ms cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
-    opacity: 0;
-    @include centerFlex();
-
-    .maskLink i{
-        font-size: 5rem;
-        padding: 0;
-    }
-
-    .maskLink{
-        border-radius: 2px;
-    }
-
-}
-
-.portItemMask:hover{
-    opacity: .8;
-
-}
-
-
-h4{
+h4 {
     font-family: $primaryFont;
-    font-weight: 300;
-    font-size: 2.2rem;
-    text-transform: capitalize;
+    font-weight: 700;
+    font-size: 2.5rem;
+    text-transform: uppercase;
     text-align: center;
     padding: 5px;
 }
-.portfolioGrid{
-    display: grid;
-    grid-template-rows: auto auto;
-    grid-template-columns: 1fr 1fr;
-    padding-bottom: 60px;
 
-    li{
-        margin: 10%;
-    }
-
-    .tagBox{
+    .tag-box{
         display: flex;
         justify-content: center;
         margin-top: 5px;
         padding: 2% 25%;
     }
 
-    .tag{
+    .tag {
         padding: 2px 7px;
         font-family: $secondaryFont;
         color: $primaryBlack;
-        font-size: 1.3rem;
-        border-top: 1.3px solid $primaryColor;
+        font-size: 1.5rem;
         text-align: center;
         width: 100%;
 
     }
 
-    .linkBox{
-        margin-top: 10%;
+    .description {
+        font-family: $secondaryFont;
+        color: $primaryBlack;
+        text-align: center;
+        font-size: 1.2rem;
+    }
+
+    .link-box {
+        margin-top: 20px;
         display: flex;
         justify-content: center;
         align-items: center;
     }
 
-    a{
+    a {
         background: $primaryWhite;
         padding: 10px 25px;
         font-family: $primaryFont;
@@ -223,79 +134,44 @@ h4{
         text-align: center;
     }
 
-    a:last-child{
+    a:last-child {
         margin-left: 10%;
     }
 
     a:hover,
-    a:focus{
+    a:focus {
         background: $primaryBlack;
         color: #fff;
         transform: scale(1.1);
     }
 }
 
-.formSection{
-    background: $primaryWhite;
-    padding-bottom: 60px;
-}
+.contact {
 
-.contactForm{
+    background: $primaryBlack;
+}
+.contact-flex-box {
     display: flex;
-    flex-direction: column;
-    font-family: $secondaryFont;
-    font-size: 1.5rem;
-    text-transform: capitalize;
-    padding: 5px;
-    text-align: center;
+    justify-content: center;
     align-items: center;
 
-    i{
-        color: black;
-    }
-}
-
-.formField{
-    display: flex;
-    flex-direction: column;
-    padding: 10px;
-    width: 100%;
-}
-
-input,
-textarea{
-    border: none;
-    border-bottom: 1px solid $primaryBlack;
-    padding: 10px;
-    background: $primaryWhite;
-}
-
-input:focus,
-textarea:focus{
-    border-bottom: 1px solid $accent;
-}
-
-.submitForm{
-    padding: 10px 25px;
-    background: $primaryBlack;
-    color: #fff;
-    border: none;
-    font-family: $primaryFont;
-    text-transform: uppercase;
-    letter-spacing: .2rem;
-    font-size: 1.2rem;
-    transition: all .3s ease-out;
-    cursor: pointer;
-    margin-top: 20px;
-    transition: all .3s ease-in-out;
-}
-
-.up{
-    padding-top: 5%;
-    transition: all .3s ease-in-out;
+    p {
+        color: $primaryWhite;
+        font-family: $primaryFont;
+        font-size: 5rem;
+        letter-spacing: .2rem;
+        font-weight: 700;
+        padding-bottom: 20px;
+    
     }
 
-    .submitForm:hover,
-    .up:hover{
-    transform: scale(1.1);
+    i {
+        color: $primaryWhite;
+        font-size: 5rem;
+        transition: all .3s ease-in-out;
+    }
+
+    i:hover {
+        transform: scale(1.1);
+    }
 }
